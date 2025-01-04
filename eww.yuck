@@ -1,0 +1,17 @@
+(include "./yuck/includes.yuck")
+
+(
+    defwindow ugly_bar
+    :monitor 0
+    :stacking "bg"
+    :exclusive "true"
+    :geometry (
+        geometry
+        :x "50%"
+        :y "0%"
+        :width "100%"
+        :height "5%"
+        :anchor "top center"
+    )
+    (main)
+)

@@ -1,0 +1,6 @@
+(defpoll workspaces_literal :interval "10ms" "python ./python/hyprland_workspaces.py")
+
+(
+    defwidget workspaces []
+    (literal :content workspaces_literal)
+)

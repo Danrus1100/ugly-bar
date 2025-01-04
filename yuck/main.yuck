@@ -1,0 +1,11 @@
+(defvar main_box_oreintation "h")
+(include "./yuck/modules/hyprland_workspaces/workspaces.yuck")
+
+(
+    defwidget main []
+    (
+        box
+        :orientation main_box_oreintation
+        (workspaces)
+    )
+)
