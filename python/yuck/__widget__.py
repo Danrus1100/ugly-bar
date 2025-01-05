@@ -1,9 +1,11 @@
+from typing import Literal
+
 class Widget():
     def __init__(
             self, 
             css_class: str = "", 
-            valign: str = "center", 
-            halign: str = "center",
+            valign: Literal["fill", "baseline", "start", "end", "center"] = "fill", 
+            halign: Literal["fill", "baseline", "start", "end", "center"] = "fill",
             vexpand: bool = False,
             hexpand: bool = False,
             width: int = 0,
@@ -16,8 +18,8 @@ class Widget():
             **kwargs
         ):
         self.css_class: str = css_class
-        self.valign: str = valign
-        self.halign: str = halign
+        self.valign: Literal["fill", "baseline", "start", "end", "center"] = valign
+        self.halign: Literal["fill", "baseline", "start", "end", "center"] = halign
         self.vexpand: bool = vexpand
         self.hexpand: bool = hexpand
         self.width: int = width
@@ -37,8 +39,8 @@ class Widget():
 
         self.DEFAULT_PROPERTIES = {
             "css_class": "",
-            "valign": "center",
-            "halign": "center",
+            "valign": "fill",
+            "halign": "fill",
             "vexpand": False,
             "hexpand": False,
             "width": 0,
@@ -63,6 +65,9 @@ class Widget():
     def remove_child(self, child: 'Widget'):
         self.children.remove(child)
     
+    def draw(self):
+        print(self.__repr__())
+    
     def __repr__(self):
         s = f"({self.name} "
         for default_param, default_value in self.DEFAULT_PROPERTIES.items():
@@ -75,6 +80,8 @@ class Widget():
                         param_str = f"'{param_str}'"
                     case "<class 'bool'>":
                         param_str = str(param_str).lower()
+                    case "<class 'float'>":
+                        param_str = str(param_str)
                 s += f":{default_param} {param_str} "
         for child in self.children:
             s += f"{child}"

@@ -1,0 +1,15 @@
+(defvar main_box_oreintation "h")
+(include "./yuck/01_start.yuck")
+(include "./yuck/02_center.yuck")
+(include "./yuck/03_end.yuck")
+
+(
+    defwidget main []
+    (
+        box
+        :orientation main_box_oreintation
+        (start)
+        (center)
+        (end)
+    )
+)

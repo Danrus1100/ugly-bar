@@ -1,0 +1,8 @@
+(
+    defwidget end []
+    (
+        box
+        :orientation main_box_oreintation
+        "end"
+    )
+)

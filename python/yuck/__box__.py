@@ -1,12 +1,13 @@
 from .__widget__ import Widget
+from typing import Literal
 
 class Box(Widget):
 
     def __init__(
             self, 
             spacing: int = 0,
-            orientation: str = "h",
-            space_evenly: bool = False,
+            orientation: Literal["h", "v", "vertical", "horizontal"] = "h",
+            space_evenly: bool = True,
             **kwargs
     ):
         super().__init__(**kwargs)
@@ -23,6 +24,6 @@ class Box(Widget):
         self.DEFAULT_PROPERTIES.update({
             "spacing": 0,
             "orientation": "h",
-            "space_evenly": False,
+            "space_evenly": True,
         })
         

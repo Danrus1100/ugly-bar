@@ -1,0 +1,10 @@
+
+(
+    defwidget center []
+    (
+        box
+        :orientation main_box_oreintation
+        "center"
+        "center2"
+    )
+)
